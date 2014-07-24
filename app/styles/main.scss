@@ -1,0 +1,235 @@
+ // Bourbon & Neat
+@import "../../bower_components/refills/source/stylesheets/all";
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,300);
+
+// Custom Styles
+body {
+  background-color: #ecf0f1;
+}
+
+#outer-container {
+  @include outer-container;
+}
+
+header {
+  background-image: url("http://i.imgur.com/OotbNOi.png?1");
+  height: 500px;
+}
+
+#logoImg {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 120px;
+  display: block;
+  width: 250px;
+}
+
+nav {
+  height: 60px;
+  background-color: black;
+  text-align: center;
+  margin-bottom: 50px;
+  a {
+    color: white;
+    padding: 15px 30px 16px 30px;
+    font-family: 'Roboto', serif;
+    position: relative;
+    top: 17px;
+    font-size: 1.4em;
+    &:hover {
+      background-color: #e67e22;
+      color: white;
+    }
+    @media screen and (max-width: 600px) {
+    padding: 0 10px 0 10px;
+    font-size: 1.2em;
+    }
+  }
+}
+
+.bottomNav {
+  margin-bottom: 0;
+  margin-top: 50px;
+}
+
+@mixin grid-item-columns($columns) {
+  width: (100% / 12) * $columns;
+}
+
+.grid-items {
+  $grid-items-background: #ecf0f1;
+  $grid-item-background: desaturate($base-accent-color, 30); 
+  $grid-item-colors: 
+    desaturate($base-accent-color, 30), 
+    #8C4646, 
+    #5E412F,
+    #98C79A,
+    #A7A891, 
+    #F2AE72,
+    #588C7E;
+  $grid-item-border-size: 9px;
+  $grid-item-columns: 4;
+  $grid-item-big-columns: 8;
+  $grid-item-color: white;
+  $grid-item-height: 14em;
+  opacity: .9;
+
+  @include clearfix;
+    
+  .grid-item {
+    @include transition (all 0.2s ease-in-out);
+    height: $grid-item-height;
+    background: $grid-item-background;
+    width: 100%;
+    overflow: hidden;
+    float: left;
+    padding: 2em;
+    border-top: 0;
+    border-bottom: $grid-item-border-size solid $grid-items-background;
+    border-left: $grid-item-border-size /2 solid $grid-items-background;
+    border-right: $grid-item-border-size /2 solid $grid-items-background;
+    text-align: center;
+    cursor: pointer;
+
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-columns);
+    }
+
+    @for $i from 1 to 8 { 
+// assign colors from $grid-item-colors list
+      &:nth-child(#{$i}) {
+        $background-from-list: nth($grid-item-colors, $i);
+        background-color: $background-from-list;
+        box-shadow: inset 0px 0px 1px 2px darken($background-from-list, 10);
+        &:hover {
+          background-repeat: no-repeat;
+          background-position: top;
+          background-size: cover;
+        }
+      }
+    }
+  }
+
+  .grid-item img {
+      display: block;
+      height: 3em;
+      margin: auto;
+      margin-bottom: 1em;
+    }
+
+  .grid-item h1 {
+      color: $grid-item-color;
+      font-size: 1.3em;
+      margin-bottom: .4em;
+    }
+
+  .grid-item p {
+      margin: auto;
+      color: transparentize($grid-item-color, .3);
+      @include media($medium-screen) {
+        max-width: 70%;
+      }
+    }
+
+  .grid-item-big {
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-big-columns);
+    }
+    p {
+      @include media($medium-screen) {
+        max-width: 60%;
+      }  
+    }
+  }
+
+  .grid-item-image {
+    background: url(/images/lake-transparent.png);
+    background-color: $grid-item-background;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+  }
+}
+
+//Individual grid modifications
+
+#item-1 {
+  background: url(http://www.motherofalltrips.com/wp-content/uploads/2010/09/Feeding-the-giraffes-at-the-Dallas-Zoo-450x300.jpg) no-repeat center;
+  background-color: #f2ae72;
+  background-blend-mode: multiply;
+  opacity: .85;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+#item-2 {
+  background: url(http://images.nationalgeographic.com/wpf/media-live/photos/000/629/cache/alligator-babies-texas_62971_990x742.jpg) no-repeat center;
+  background-color: #BFE1BF;
+  background-blend-mode: multiply;
+  opacity: .85;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+#item-3 {
+  background-color: #4D6684;
+  opacity: .85;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+#item-4 {
+  background-color: #f2ae72;
+  opacity: .85;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+#item-5 {
+  background: url(http://wpjrnl.com/wp-content/uploads/2009/12/wpid200-lions-@-toronto-zoo-11.jpg) no-repeat center;
+  background-color: #F2AE72;
+  background-blend-mode: multiply;
+  opacity: .85;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+#item-6 {
+  background: url(http://www.photosofanimals.com/insect-photos/butterfly-photos/butterfly-pictures/blue-tiger-butterfly.jpg) no-repeat center;
+  background-color: #737495;
+  background-blend-mode: multiply;
+  opacity: .85;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+#item-7 {
+  background: url(http://fashionalmanac.files.wordpress.com/2011/03/sloth-1.jpg) no-repeat center;
+  background-color: #F2AE72;
+  background-blend-mode: multiply;
+  opacity: .85;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
