@@ -31,13 +31,13 @@ nav {
   margin-bottom: 50px;
   a {
     color: white;
-    padding: 15px 30px 16px 30px;
+    padding: 14px 30px 17px 30px;
     font-family: 'Roboto', serif;
     position: relative;
     top: 17px;
     font-size: 1.4em;
     &:hover {
-      background-color: #e67e22;
+      background-color: #F27242;
       color: white;
     }
     @media screen and (max-width: 600px) {
@@ -50,6 +50,14 @@ nav {
 .bottomNav {
   margin-bottom: 0;
   margin-top: 50px;
+  height: 75px;
+  a {
+    font-size: 2.5em;
+    padding: 9px 30px 13px 30px;
+    &:hover {
+      background-color: #F27242;
+    }
+  }
 }
 
 @mixin grid-item-columns($columns) {
@@ -182,10 +190,10 @@ nav {
 }
 
 #item-4 {
-  background-color: #f2ae72;
-  opacity: .85;
+  background-color: #F27242;
+  opacity: 1;
   &:hover {
-    opacity: 1;
+    opacity: .8;
   }
 }
 
@@ -193,9 +201,9 @@ nav {
   background: url(http://wpjrnl.com/wp-content/uploads/2009/12/wpid200-lions-@-toronto-zoo-11.jpg) no-repeat center;
   background-color: #F2AE72;
   background-blend-mode: multiply;
-  opacity: .85;
+  opacity: 1;
   &:hover {
-    opacity: 1;
+    opacity: .8;
   }
 }
 
